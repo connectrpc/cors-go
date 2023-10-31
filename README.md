@@ -25,9 +25,9 @@ func main() {
 	})
 	// Insert the middleware
 	handler := c.Handler(
-        // Your Connect handler goes here
+		// Your Connect handler goes here
 	)
-    // Serve the handler
+	// Serve the handler
 }
 ```
 

@@ -16,18 +16,16 @@ import (
 	rscors "github.com/rs/cors"
 )
 
-func main() {
+// corsMiddleware wraps a handler with require cors config using rs/cors.
+func corsMiddleware(handler http.Handler) http.Handler {
 	// Create a new cors instance with default options.
 	c := rscors.New(rscors.Options{
 		AllowedMethods: cors.AllowedMethods(),
 		AllowedHeaders: cors.AllowedHeaders(),
 		ExposedHeaders: cors.ExposedHeaders(),
 	})
-	// Insert the middleware
-	handler := c.Handler(
-		// Your Connect handler goes here
-	)
-	// Serve the handler
+    // Insert the middleware as a wrapper around your handler.
+    return c.Handler(handler /* connect handler */)
 }
 ```
 

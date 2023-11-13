@@ -24,8 +24,8 @@ func corsMiddleware(handler http.Handler) http.Handler {
 		AllowedHeaders: cors.AllowedHeaders(),
 		ExposedHeaders: cors.ExposedHeaders(),
 	})
-    // Insert the middleware as a wrapper around your handler.
-    return c.Handler(handler /* connect handler */)
+	// Insert the middleware as a wrapper around your handler.
+	return c.Handler(handler /* connect handler */)
 }
 ```
 

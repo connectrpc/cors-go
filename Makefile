@@ -38,7 +38,7 @@ build: generate ## Build all packages
 generate: $(BIN)/license-header ## Regenerate code and licenses
 	license-header \
 		--license-type apache \
-		--copyright-holder "Buf Technologies, Inc." \
+		--copyright-holder "The Connect Authors" \
 		--year-range "$(COPYRIGHT_YEARS)" $(LICENSE_IGNORE)
 
 .PHONY: lint

@@ -1,40 +1,47 @@
-cors-go
-===============
+cors
+====
 
-Cross-origin resource sharing (CORS) support for Connect servers. Exports methods
-to configure CORS headers to allow Connect and gRPC-web protocols to operate in
-the browser.
+[![Build](https://github.com/connectrpc.com/cors-go/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/connectrpc.com/cors-go/actions/workflows/ci.yaml)
+[![Report Card](https://goreportcard.com/badge/connectrpc.com/cors)](https://goreportcard.com/report/connectrpc.com/cors)
+[![GoDoc](https://pkg.go.dev/badge/connectrpc.com/cors.svg)](https://pkg.go.dev/connectrpc.com/cors)
+
+`connectrpc.com/cors` provides convenience methods to make configuring
+Cross-Origin Resource Sharing (CORS) easier for
+[Connect](https://github.com/connectrpc/connect-go) servers. CORS is often
+required for the Connect and gRPC-Web protocols to work correctly in web
+browsers.
+
+For background, more details, and best practices, see [Connect's CORS
+documentation](https://connectrpc.com/docs/cors).
 
 ## Example
 
-As an example, we will use the [github.com/rs/cors](https://github.com/rs/cors) 
-package to demonstrate how to use the constants defined in this package.
+This package should work with any CORS package. As an example, we'll use it
+with [github.com/rs/cors](https://github.com/rs/cors).
 
 ```go
 import (
-	cors "github.com/bufbuild/cors-go"
-	rscors "github.com/rs/cors"
+	connectcors "connectrpc.com/cors"
+	"github.com/rs/cors"
 )
 
-// corsMiddleware wraps a handler with require cors config using rs/cors.
-func corsMiddleware(handler http.Handler) http.Handler {
-	// Create a new cors instance with default options.
-	c := rscors.New(rscors.Options{
-		AllowedMethods: cors.AllowedMethods(),
-		AllowedHeaders: cors.AllowedHeaders(),
-		ExposedHeaders: cors.ExposedHeaders(),
+// withCORS adds CORS support to a Connect HTTP handler.
+func withCORS(connectHandler http.Handler) http.Handler {
+	c := cors.New(cors.Options{
+		AllowedOrigins: []string{"https://acme.com"}, // replace with your domain
+		AllowedMethods: connectcors.AllowedMethods(),
+		AllowedHeaders: connectcors.AllowedHeaders(),
+		ExposedHeaders: connectcors.ExposedHeaders(),
+    MaxAge: 7200, // 2 hours in seconds
 	})
-	// Insert the middleware as a wrapper around your handler.
-	return c.Handler(handler /* connect handler */)
+	return c.Handler(connectHandler)
 }
 ```
 
 ## Status: Alpha
 
-Cors is undergoing initial development and is not yet stable.
+This module is undergoing initial development and is not yet stable.
 
 ## Legal
 
-Offered under the [Apache 2 license][license].
-
-[license]: https://github.com/bufbuild/cors-go/blob/main/LICENSE
+Offered under the [Apache 2 license][LICENSE].

@@ -1,3 +1,3 @@
-module github.com/bufbuild/cors-go
+module connectrpc.com/cors
 
 go 1.19

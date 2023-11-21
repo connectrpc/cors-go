@@ -1,5 +1,5 @@
-cors-go
-=======
+cors
+====
 
 [![Build](https://github.com/connectrpc.com/cors-go/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/connectrpc.com/cors-go/actions/workflows/ci.yaml)
 [![Report Card](https://goreportcard.com/badge/connectrpc.com/cors)](https://goreportcard.com/report/connectrpc.com/cors)

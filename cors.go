@@ -12,12 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Package cors provides cross-origin resource sharing (CORS) constants for
-// Connect. These constants are used to configure the CORS headers for a
-// Connect server.
+// Package cors provides helpers to configure cross-origin resource sharing
+// (CORS) for Connect servers.
 package cors
-
-import "net/http"
 
 // AllowedMethods returns the allowed HTTP methods that scripts running in the
 // browser are permitted to use.
@@ -27,50 +24,43 @@ import "net/http"
 // Access-Control-Allow-Methods.
 func AllowedMethods() []string {
 	return []string{
-		http.MethodGet,  // Required for Connect GET requests
-		http.MethodPost, // Required for all protocols
+		"GET",  // for Connect
+		"POST", // for all protocols
 	}
 }
 
-// AllowedHeaders returns the allowed header fields that scripts running in the
-// browser are permitted to access.
+// AllowedHeaders returns the headers that scripts running in the browser send
+// when making RPC requests. To support cross-domain requests with the
+// protocols supported by Connect, these field names must be included in the
+// Access-Control-Allow-Headers header of the preflight response.
 //
-// To support cross-domain requests with the protocols supported by Connect,
-// these field names must be included in header Access-Control-Allow-Headers
-// of the actual response.
+// When configuring CORS, make sure to also include any application-specific
+// headers your server expects to receive from the browser.
 func AllowedHeaders() []string {
 	return []string{
-		"Content-Type",             // Required for Connect
-		"Connect-Protocol-Version", // Required for Connect
-		"Connect-Timeout-Ms",       // Optional for Connect
-		"Connect-Accept-Encoding",  // Future use for Connect
-		"Connect-Content-Encoding", // Future use for Connect
-		"Accept-Encoding",          // Future use for Connect
-		"Content-Encoding",         // Future use for Connect
-		"Grpc-Timeout",             // Required for gRPC-web
-		"X-Grpc-Web",               // Optional for gRPC-web
-		"X-User-Agent",             // Optional for gRPC-web
+		"Content-Type",             // for all protocols
+		"Connect-Protocol-Version", // for Connect
+		"Connect-Timeout-Ms",       // for Connect
+		"Grpc-Timeout",             // for gRPC-web
+		"X-Grpc-Web",               // for gRPC-web
+		"X-User-Agent",             // for all protocols
 	}
 }
 
-// ExposedHeaders returns the headers that scripts running in the browser are
-// permitted to see.
+// ExposedHeaders returns the headers that scripts running in the
+// browser expect to access when receiving RPC responses. To support
+// cross-domain requests with the protocols supported by Connect, these field
+// names must be included in the Access-Control-Expose-Headers header of the
+// actual response.
 //
-// To support cross-domain requests with the protocols supported by Connect,
-// these field names must be included in header Access-Control-Expose-Headers
-// of the actual response.
-//
-// Make sure to include any application-specific headers your browser client
-// should see. If your application uses trailers, they will be sent as header
-// fields with a `Trailer-` prefix for Connect unary RPCs - make sure to
-// expose them as well if you want them to be visible in all supported
-// protocols.
+// When configuring CORS, make sure to also include any application-specific
+// headers your server expects to send to the browser. If your application uses
+// trailers, they will be sent as headers with a `Trailer-` prefix for
+// unary Connect RPCs - make sure to expose them!
 func ExposedHeaders() []string {
 	return []string{
-		"Content-Encoding",         // Future use for Connect
-		"Connect-Content-Encoding", // Future use for Connect
-		"Grpc-Status",              // Required for gRPC-web header response
-		"Grpc-Message",             // Required for gRPC-web header response
-		"Grpc-Status-Details-Bin",  // Required for gRPC-web error details
+		"Grpc-Status",             // for gRPC-web
+		"Grpc-Message",            // for gRPC-web
+		"Grpc-Status-Details-Bin", // for gRPC-web
 	}
 }

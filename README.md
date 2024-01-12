@@ -67,6 +67,7 @@ make breaking changes in the 1.x series of releases.
 Offered under the [Apache 2 license][license].
 
 [Getting Started]: https://connectrpc.com/docs/go/getting-started
+[authn]: https://github.com/connectrpc/authn-go
 [blog]: https://buf.build/blog/connect-a-better-grpc
 [conformance]: https://github.com/connectrpc/conformance
 [connect-es]: https://github.com/connectrpc/connect-es

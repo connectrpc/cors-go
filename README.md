@@ -43,7 +43,7 @@ func withCORS(connectHandler http.Handler) http.Handler {
 ## Ecosystem
 
 * [connect-go]: the Go implementation of Connect's RPC runtime
-* [examples-go]: service powering demo.connectrpc.com, including bidi streaming
+* [examples-go]: service powering [demo.connectrpc.com][demo], including bidi streaming
 * [grpchealth]: gRPC-compatible health checks
 * [grpcreflect]: gRPC-compatible server reflection
 * [authn]: pluggable authentication for Connect servers
@@ -73,6 +73,7 @@ Offered under the [Apache 2 license][license].
 [connect-es]: https://github.com/connectrpc/connect-es
 [connect-go]: https://github.com/connectrpc/connect-go
 [cors]: https://github.com/connectrpc/cors-go
+[demo]: https://demo.connectrpc.com
 [docs]: https://connectrpc.com
 [examples-go]: https://github.com/connectrpc/examples-go
 [go-support-policy]: https://golang.org/doc/devel/release#policy

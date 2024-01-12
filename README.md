@@ -1,6 +1,6 @@
 cors
 ====
-[![Build](https://github.com/connectrpc.com/cors-go/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/connectrpc.com/cors-go/actions/workflows/ci.yaml)
+[![Build](https://github.com/connectrpc/cors-go/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/connectrpc/cors-go/actions/workflows/ci.yaml)
 [![Report Card](https://goreportcard.com/badge/connectrpc.com/cors)](https://goreportcard.com/report/connectrpc.com/cors)
 [![GoDoc](https://pkg.go.dev/badge/connectrpc.com/cors.svg)](https://pkg.go.dev/connectrpc.com/cors)
 [![Slack](https://img.shields.io/badge/slack-buf-%23e01563)][slack]

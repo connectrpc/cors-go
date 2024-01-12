@@ -50,9 +50,12 @@ func withCORS(connectHandler http.Handler) http.Handler {
 * [connect-es]: Type-safe APIs with Protobuf and TypeScript
 * [conformance]: Connect, gRPC, and gRPC-Web interoperability tests
 
-## Status: Stable
+## Status: Unstable
 
-This module is stable. It supports the three most recent major releases of Go.
+This module isn't stable yet, but it's fairly small &mdash; we expect to reach
+a stable release quickly.
+
+It supports the three most recent major releases of Go.
 Keep in mind that [only the last two releases receive security
 patches][go-support-policy].
 

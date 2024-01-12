@@ -1,6 +1,6 @@
 cors
 ====
-[![Build](https://github.com/connectrpc.com/cors-go/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/connectrpc.com/cors-go/actions/workflows/ci.yaml)
+[![Build](https://github.com/connectrpc/cors-go/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/connectrpc/cors-go/actions/workflows/ci.yaml)
 [![Report Card](https://goreportcard.com/badge/connectrpc.com/cors)](https://goreportcard.com/report/connectrpc.com/cors)
 [![GoDoc](https://pkg.go.dev/badge/connectrpc.com/cors.svg)](https://pkg.go.dev/connectrpc.com/cors)
 [![Slack](https://img.shields.io/badge/slack-buf-%23e01563)][slack]
@@ -61,7 +61,7 @@ make breaking changes in the 1.x series of releases.
 
 ## Legal
 
-Offered under the [Apache 2 license][LICENSE].
+Offered under the [Apache 2 license][license].
 
 [Getting Started]: https://connectrpc.com/docs/go/getting-started
 [blog]: https://buf.build/blog/connect-a-better-grpc
@@ -75,5 +75,6 @@ Offered under the [Apache 2 license][LICENSE].
 [godoc]: https://pkg.go.dev/connectrpc.com/authn
 [grpchealth]: https://github.com/connectrpc/grpchealth-go
 [grpcreflect]: https://github.com/connectrpc/grpcreflect-go
+[license]: https://github.com/connectrpc/cors-go/blob/main/LICENSE
 [protocol]: https://connectrpc.com/docs/protocol
 [slack]: https://buf.build/links/slack

@@ -3,7 +3,8 @@ cors
 [![Build](https://github.com/connectrpc/cors-go/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/connectrpc/cors-go/actions/workflows/ci.yaml)
 [![Report Card](https://goreportcard.com/badge/connectrpc.com/cors)](https://goreportcard.com/report/connectrpc.com/cors)
 [![GoDoc](https://pkg.go.dev/badge/connectrpc.com/cors.svg)](https://pkg.go.dev/connectrpc.com/cors)
-[![Slack](https://img.shields.io/badge/slack-buf-%23e01563)][slack]
+[![Slack](https://img.shields.io/badge/slack-buf-%23e01563)][![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fconnectrpc%2Fcors-go.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fconnectrpc%2Fcors-go?ref=badge_shield)
+[slack]
 
 `connectrpc.com/cors` simplifies Cross-Origin Resource Sharing (CORS) for
 [Connect](https://github.com/connectrpc/connect-go) servers. CORS is usually
@@ -83,3 +84,7 @@ Offered under the [Apache 2 license][license].
 [license]: https://github.com/connectrpc/cors-go/blob/main/LICENSE
 [protocol]: https://connectrpc.com/docs/protocol
 [slack]: https://buf.build/links/slack
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fconnectrpc%2Fcors-go.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fconnectrpc%2Fcors-go?ref=badge_large)
